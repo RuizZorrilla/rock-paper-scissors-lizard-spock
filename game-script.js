@@ -11,12 +11,12 @@ const results=[
     ['rock'     ,'crushes'      ,'scissors']
 ];
 
-//document.addEventListener("DOMContentLoaded", loaded)
+document.addEventListener("DOMContentLoaded", loaded)
 
-/* function loaded(){
+ function loaded(){
     console.log("Welcome! Let's play");
     game()
-} */
+} 
 
 function game(){
         console.log(round(computerPlays(), playerPlays()));
@@ -57,7 +57,9 @@ function computerPlays(){
     return results[computerNumber][0];
 }
 
-function playerPlays(){
+
+
+/* function playerPlays(){
     let playerInput
     let isValid =false;
     while(isValid==false){
@@ -83,5 +85,5 @@ function playerPlays(){
     }
     return playerInput;
 
-}
+} */
 
