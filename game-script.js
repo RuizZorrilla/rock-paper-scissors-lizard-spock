@@ -14,20 +14,30 @@ const results=[
 document.addEventListener("DOMContentLoaded", loaded)
 
  function loaded(){
-    console.log("Welcome! Let's play");
-    game()
+    document.getElementById("btnRock").addEventListener("click", function() { game("rock") });
+    document.getElementById("btnSpock").addEventListener("click", function() { game("spock")});
+    document.getElementById("btnLizard").addEventListener("click", function() { game("lizard")});
+    document.getElementById("btnPaper").addEventListener("click", function() { game("paper")});
+    document.getElementById("btnScissors").addEventListener("click", function() { game("scissors")});
 } 
 
-function game(){
-        console.log(round(computerPlays(), playerPlays()));
+function game(playerInput){
+        document.getElementById("result").innerHTML = round(computerPlays() , playerInput);
 }
 
-function round(compueterInput,playerInput){
+function round(compueterInput, playerInput){
+    
+    if(compueterInput==playerInput){
+        return "It's a tie";
+    }
+   
+    console.log(compueterInput)
+    console.log(playerInput)
+
     //FOR LOOP SEARCHES FOR PLAYER INPUT IN THE FIRST ROW
     //----IF INPUT FOUND LOOKS IF COMPUTER PLAYER IS IN THIRD ROW
     //--------IF IT IS FOUND, PLAYER WINS
     //----------RETURN STRING WITH PLAYER WINS
-    
     for (let i = 0; i < results.length; i++){
         if(results[i][0]==playerInput){
             if(results[i][2]==compueterInput){
